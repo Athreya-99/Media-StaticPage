@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Story - A Gift For You</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Loading Screen with Logo -->
+    <div id="loadingScreen" class="loading-screen">
+        <div class="logo-container">
+            <img src="imagesMe/Netflix-Logo.jpg" class="logo" alt="Netflix Logo">
+        </div>
+    </div>
+
+    <!-- Sign-In Screen -->
+    <div id="authScreen" class="auth-screen">
+        <div class="auth-header">
+            <img src="imagesMe/Netflix-Logo.jpg" class="auth-logo-top" alt="Netflix Logo">
+        </div>
+        
+        <div class="auth-main">
+            <div class="auth-form-container">
+                <h1 class="auth-heading">Enter your info to sign in</h1>
+                <p class="auth-subheading">Or get started with a new account.</p>
+                
+                <form class="auth-form" id="authForm">
+                    <div class="form-group-single">
+                        <input 
+                            type="text" 
+                            id="username" 
+                            class="form-input-single" 
+                            placeholder="Username" 
+                            required
+                        >
+                    </div>
+                    <div class="form-group-single">
+                        <input 
+                            type="password" 
+                            id="password" 
+                            class="form-input-single" 
+                            placeholder="Password" 
+                            required
+                        >
+                    </div>
+                    <p class="auth-error" id="authError"></p>
+                    
+                    <button type="submit" class="continue-btn">Continue</button>
+                </form>
+                
+                <div class="auth-footer">
+                    <a href="#" class="help-link">Get Help</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Profile Selection Screen -->
+    <div id="profileScreen" class="profile-screen hidden">
+        <div class="profile-header">
+            <h1>Who?</h1>
+        </div>
+
+        <div class="profiles-container">
+            <div class="profile-card" data-profile="me">
+                <img src="imagesMe/profileMe.jpg" class="profile-image" alt="Me">
+                <p class="profile-name">Me</p>
+            </div>
+
+            <div class="profile-card" data-profile="us">
+                <img src="imagesMe/profileUs.jpg" class="profile-image" alt="Us">
+                <p class="profile-name">Us</p>
+            </div>
+        </div>
+
+        <button class="manage-btn">Manage Profiles</button>
+    </div>
+
+    <!-- Main Content Area -->
+    <div id="mainContent" class="main-content hidden">
+        <!-- Navigation -->
+        <nav class="navbar">
+            <div class="navbar-left">
+                <button id="profilesBtn" class="profiles-btn">Profiles</button>
+            </div>
+            <div id="sectionButtons" class="section-buttons">
+                <!-- Buttons will be dynamically generated here -->
+            </div>
+            <div class="navbar-right">
+                <span class="logo-small">Birthday Edition</span>
+            </div>
+        </nav>
+
+        <!-- Video Section -->
+        <div class="video-section">
+            <video id="mainVideo" class="main-video" muted playsinline>
+                <source src="" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="video-controls">
+                <input type="range" id="videoProgress" class="video-progress" min="0" max="100" value="0">
+            </div>
+            <h2 id="videoTitle" class="video-title-overlay">Welcome to Our Story</h2>
+        </div>
+
+        <!-- View Toggle Section -->
+        <div class="view-toggle-section">
+            <span class="view-by-label">View by</span>
+            <div class="view-toggle-buttons">
+                <button class="view-btn view-btn-active" data-view="date">Date</button>
+                <button class="view-btn" data-view="events">Events</button>
+            </div>
+        </div>
+
+        <!-- Scrollable Sections -->
+        <div class="content-area" id="contentArea">
+            <!-- Sections will be dynamically generated here -->
+        </div>
+
+        <!-- Premium Image Viewer Modal -->
+        <div id="imageModal" class="image-viewer hidden">
+            <div class="viewer-header">
+                <button class="viewer-back-btn">&larr; Back</button>
+            </div>
+            
+            <div class="viewer-container">
+                <button class="viewer-nav-btn viewer-prev-btn">❮</button>
+                <div class="viewer-image-wrapper">
+                    <img id="viewerImage" src="" alt="">
+                </div>
+                <button class="viewer-nav-btn viewer-next-btn">❯</button>
+            </div>
+            
+            <div class="viewer-footer">
+                <p id="viewerCaption" class="viewer-caption"></p>
+                <span id="viewerCounter" class="viewer-counter"></span>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
